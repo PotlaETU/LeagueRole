@@ -20,6 +20,9 @@ public class AvisController {
     private Button enter;
 
     @FXML
+    private Button restart;
+
+    @FXML
     private ImageView image;
 
     @FXML
@@ -47,7 +50,7 @@ public class AvisController {
             case "adc":
                 Image adc = new Image(Objects.requireNonNull(getClass().getResourceAsStream("adc.jpeg")));
                 image.setImage(adc);
-                text.setText("rôle de pleurnichard qui insulte Riot quand ils ne peuvent pas os... Mais en vrai jgl diff pas vrai ?");
+                text.setText("Rôle de pleurnichard qui insulte Riot quand ils ne peuvent pas os... Mais en vrai jgl diff pas vrai ?");
                 break;
             case "sup":
                 Image sup = new Image(Objects.requireNonNull(getClass().getResourceAsStream("lux.jpg")));
@@ -55,8 +58,12 @@ public class AvisController {
                 text.setText("Toi t'aimes les skins utlimes heinnnn... Essaye de ne pas ks l'adc ça serait cool...");
                 break;
         };
-        choice.setDisable(false);
         }
+    @FXML
+    void onRestart(ActionEvent event){
+        choice.setDisable(false);
+    }
+
 
     @FXML
     void initialize(){

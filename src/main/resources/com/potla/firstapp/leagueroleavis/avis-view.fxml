@@ -6,6 +6,7 @@
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -21,26 +22,36 @@
    </Label>
    <VBox prefHeight="512.0" prefWidth="1040.0">
       <children>
-         <ImageView fx:id="image" fitHeight="407.0" fitWidth="998.0" pickOnBounds="true" preserveRatio="true">
-            <cursor>
-               <Cursor fx:constant="OPEN_HAND" />
-            </cursor></ImageView>
+         <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <center>
+               <ImageView fx:id="image" fitHeight="407.0" fitWidth="998.0" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                  <cursor>
+                     <Cursor fx:constant="OPEN_HAND" />
+                  </cursor>
+               </ImageView>
+            </center>
+         </BorderPane>
       
           <Label fx:id="text" alignment="CENTER" prefHeight="46.0" prefWidth="1230.0" textAlignment="CENTER">
             <VBox.margin>
                <Insets top="18.0" />
             </VBox.margin>
             <font>
-               <Font size="14.0" />
+               <Font size="18.0" />
             </font>
          </Label>
       </children>
    </VBox>
    <HBox prefHeight="100.0" prefWidth="200.0">
       <children>
+         <Button fx:id="restart" mnemonicParsing="false" onAction="#onRestart" text="Recommencer">
+            <HBox.margin>
+               <Insets left="300.0" />
+            </HBox.margin>
+         </Button>
          <ChoiceBox fx:id="choice" prefWidth="150.0">
             <HBox.margin>
-               <Insets left="400.0" />
+               <Insets left="50.0" />
             </HBox.margin>
          </ChoiceBox>
           <Button fx:id="enter" onAction="#onEnter" text="Entrer">
