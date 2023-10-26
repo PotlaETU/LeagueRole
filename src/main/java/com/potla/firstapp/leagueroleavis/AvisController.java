@@ -35,9 +35,10 @@ public class AvisController {
             case "top"-> {Image ornn = new Image(Objects.requireNonNull(getClass().getResourceAsStream("ornn_portrait.jpg")));
                 image.setImage(ornn);
                 text.setText("Toi t'es le giga chad de la team, tu solo lane toute la game, t'es le sigma originel");}
-            case "jgl"->{
+            case "jgl"-> {
                 Image leesin = new Image(Objects.requireNonNull(getClass().getResourceAsStream("leesin.jpg")));
-                image.setImage(leesin);}
+                image.setImage(leesin);
+                text.setText("Et oui, tu portes sur tes épaules tout le malheur de la faille... T'as du courage");}
             case "mid"->{
                 Image midlane = new Image(Objects.requireNonNull(getClass().getResourceAsStream("fakeradcmid.jpg")));
                 image.setImage(midlane);
@@ -52,8 +53,8 @@ public class AvisController {
                 image.setImage(sup);
                 text.setText("Toi t'aimes les skins utlimes heinnnn... Essaye de ne pas ks l'adc ça serait cool...");}
 
-        };
-        }
+            default -> throw new IllegalStateException("Unexpected value: " + choice.getValue().getCode());
+        }};
     @FXML
     void onRestart(ActionEvent event){
         choice.setDisable(false);
